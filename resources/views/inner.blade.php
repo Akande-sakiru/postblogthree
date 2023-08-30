@@ -1,0 +1,1 @@
+<h3> My inner page</h3>
