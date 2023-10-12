@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\user;
-use   Validator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class fApi extends Controller
 {
@@ -55,7 +56,7 @@ class fApi extends Controller
     function inde($name){
         $result= user::where("name","like","%".$name."%")->get();
         if($result){
-           return  $result;
+           return  ["Result"=>"data is available"];
 
         }
         else{

@@ -8,7 +8,7 @@ use App\Models\User;
 class save extends Controller
 {
     
-    function save( Request $req){
+    function save(Request $req){
         $user = new user;
         $user->name=$req->name;
         $user->address=$req->address;
@@ -20,7 +20,7 @@ class save extends Controller
         // ])
     }
     function deleteA(){
-        $data= user::all();
+        $data= User::all();
         return view('save',['users'=>$data]);
 
     }

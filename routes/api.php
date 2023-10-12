@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\fApi;
+use App\Http\Controllers\memberController;
 use App\Http\Controllers\sanctum;
 use App\Http\Controllers\upload;
 
@@ -23,14 +24,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // get api
-// Route::get('data',[fApi::class,'index']);
+Route::get('data',[fApi::class,'index']);
 // post api
-// Route::post('data',[fApi::class,'index']);
+Route::post('data',[fApi::class,'index']);
 //put method
 Route::put('update',[fApi::class,'index']);
 // delete method
 Route::delete('delete/{id}',[fApi::class,'index']);
-//search method
+
 
 // validator
 Route::post('valid',[fApi::class,'index']);
@@ -38,6 +39,7 @@ Route::post('valid',[fApi::class,'index']);
 // sanctum
 Route::group(['middleware' => 'auth:sanctum'], function(){
     //All secure URL's
+    //search method
     Route::get('search/{name}',[fApi::class,'inde']);
 
 
@@ -48,6 +50,10 @@ Route::post("sanc",[sanctum::class,'index']);
 // file
 
 Route::post('uploadFile',[upload::class,'uploadFile']);
+
+//api resource
+
+Route::apiResource('member',memberController::class);
 
 
 
