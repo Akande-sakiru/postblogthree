@@ -15,8 +15,13 @@ class User extends Authenticatable
     public $timestamps= false;
 
     // public function setNameAttribute($value){
-    //     $this->attributes['name']='Mr '.$value;
-    // }
+    //     if(substr($value,0,3)=="Mr."){
+    //         $this->attributes['name']='Mr '.$value;
+    //     }else{
+    //         $this->attributes['name']='Mr '.$value;
+
+    //     }
+    //  }
     // public function setAddressAttribute($value){
     //     $this->attributes['address']=$value.',London';
     // }

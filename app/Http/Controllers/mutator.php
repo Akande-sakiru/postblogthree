@@ -11,10 +11,11 @@ class mutator extends Controller
     function index(){
         // return user::all();
           $user = new User;
-          $user->name='Akanbi';
-          $user['email']='akanbi@test.com';
-          $user['address']='UK';
+          $user->name='AkanbiRanbir';
+          $user['email']='akanbiR@test.com';
+          $user['address']='USA';
           $user->save();
+          return ["x"=>"y"];
 
     }
 }
